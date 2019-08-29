@@ -31,6 +31,8 @@ var path;
 var curve;
 var points;
 var graphics;
+    var text;
+var counter = 0;
 
 var game = new Phaser.Game(config);
 
@@ -121,17 +123,22 @@ function update ()
 
     //  Draw the curve through the points
     graphics.lineStyle(1, 0xff00ff, 1);
-/*
+
     curve.draw(graphics);
 
     //  Draw t
     curve.getPoint(path.t, path.vec);
-*/
+
     graphics.fillStyle(0xffff00, 1);
     graphics.fillCircle(path.vec.x, path.vec.y, 16);
     
 }
+function listener () {
 
+    text.text = game.input.mousePointer.x +"/"+game.input.mousePointer.y +     counter + "!";
+
+
+}
 
 </script>
 
